@@ -12,20 +12,28 @@ function CommonForm({
   setFormData,
   handleFileChange,
 }) {
-  function renderInputByComponentType(getCurrentControl) {
+  function renderInputByComponentType(control) {
+    const {
+      componentType,
+      disabled,
+      placeholder,
+      name,
+      label,
+    } = control;
+
     let content = null;
 
-    switch (getCurrentControl.componentType) {
+    switch (componentType) {
       case "input":
         content = (
-          <div className="relative flex items-center mt-8">
+          <div className="relative flex items-center mt-8" key={name}>
             <Input
               type="text"
-              disabled={getCurrentControl.disabled}
-              placeholder={getCurrentControl.placeholder}
-              name={getCurrentControl.name}
-              id={getCurrentControl.name}
-              value={formData[getCurrentControl.name]}
+              disabled={disabled}
+              placeholder={placeholder}
+              name={name}
+              id={name}
+              value={formData[name]}
               onChange={(event) =>
                 setFormData({
                   ...formData,
@@ -36,36 +44,35 @@ function CommonForm({
             />
           </div>
         );
-
         break;
 
       case "file":
         content = (
           <Label
-            for={getCurrentControl.name}
+            htmlFor={name}
             className="flex bg-gray-100 dark:bg-black items-center px-3 py-3 mx-auto mt-6 text-center border-2 border-dashed rounded-lg cursor-pointer"
+            key={name}
           >
-            <h2>{getCurrentControl.label}</h2>
+            <h2>{label}</h2>
             <Input
               onChange={handleFileChange}
-              id={getCurrentControl.name}
+              id={name}
               type="file"
             />
           </Label>
         );
-
         break;
 
       default:
         content = (
-          <div className="relative flex items-center mt-8">
+          <div className="relative flex items-center mt-8" key={name}>
             <Input
               type="text"
-              disabled={getCurrentControl.disabled}
-              placeholder={getCurrentControl.placeholder}
-              name={getCurrentControl.name}
-              id={getCurrentControl.name}
-              value={formData[getCurrentControl.name]}
+              disabled={disabled}
+              placeholder={placeholder}
+              name={name}
+              id={name}
+              value={formData[name]}
               onChange={(event) =>
                 setFormData({
                   ...formData,
