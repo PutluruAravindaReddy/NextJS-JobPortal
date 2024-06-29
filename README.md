@@ -5,12 +5,12 @@ Welcome to HireSphere, a job portal built with Next.js! This platform allows use
 ## Table of Contents
 
 - [Features](#features)
+- [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -22,6 +22,16 @@ Welcome to HireSphere, a job portal built with Next.js! This platform allows use
 - Manage personal information and activities
 - Search and filter functionalities
 - Responsive design
+
+## Technologies Used
+
+- **Next.js:** React framework for server-side rendering and static site generation.
+- **React.js:** JavaScript library for building user interfaces.
+- **MongoDB:** NoSQL database for storing user and job data.
+- **Clerk:** User authentication and management.
+- **Tailwind CSS:** Utility-first CSS framework for styling.
+- **Node.js:** JavaScript runtime for server-side development.
+- **Vercel:** Platform for deploying Next.js applications.
 
 ## Project Structure
 
@@ -152,15 +162,6 @@ Update the next.config.js file to configure your project settings. You can also 
 - **PUT /api/applications/:id:** Update a specific application.
 - **DELETE /api/applications/:id:** Delete a specific application.
 
-## Technologies Used
-
-- **Next.js:** React framework for server-side rendering and static site generation.
-- **React.js:** JavaScript library for building user interfaces.
-- **MongoDB:** NoSQL database for storing user and job data.
-- **Clerk:** User authentication and management.
-- **Tailwind CSS:** Utility-first CSS framework for styling.
-- **Node.js:** JavaScript runtime for server-side development.
-- **Vercel:** Platform for deploying Next.js applications.
 
 ## Contributing
 
