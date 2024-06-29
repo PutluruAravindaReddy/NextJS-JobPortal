@@ -5,6 +5,40 @@ import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { Fragment } from "react";
 
+export const metadata = {
+  title: 'Home - HireSphere',
+  description: 'Discover job opportunities and connect with top employers on HireSphere, your ultimate job portal for career growth and success.',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'HireSphere - Your Ultimate Job Portal',
+    description: 'Join HireSphere to find the best job opportunities and connect with leading companies.',
+    images: ['/img/Logo/hiresphere_logo.svg'],
+  },
+  openGraph: {
+    url: 'https://next-js-job-portal.vercel.app',
+    title: 'Home - HireSphere',
+    description: 'Discover job opportunities and connect with top employers on HireSphere, your ultimate job portal for career growth and success.',
+    images: [
+      {
+        url: '/img/Logo/hiresphere_logo.svg',
+        width: 800,
+        height: 600,
+        alt: 'HireSphere Logo',
+      },
+    ],
+    siteName: 'HireSphere',
+  },
+  metadataBase: new URL('https://next-js-job-portal.vercel.app'),
+  themeColor: '#007BFF',
+  keywords: ['HireSphere', 'job portal', 'job search', 'career opportunities', 'employment', 'job listings', 'recruitment', 'job board', 'career growth'],
+  robots: 'index,follow',
+  authors: [{ name: 'HireSphere Team' }],
+};
+
+
+
+
+
 async function Home() {
   const user = await currentUser();
   const profileInfo = await fetchProfileAction(user?.id);

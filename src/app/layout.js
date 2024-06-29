@@ -8,10 +8,6 @@ import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "NextJS Job Portal",
-  description: "Build Using NextJS",
-};
 
 export default function RootLayout({ children }) {
   return (
